@@ -30,7 +30,7 @@ div {
 }
 
 /* het flex-item */
-section, [role="stepIndicator"]{
+section, .stepIndicator {
     border-top: 1px solid #807182;
     display: flex;
     flex-direction: row;
@@ -140,7 +140,7 @@ section:nth-child(even){
 
 
 /* Sectie inlog */
-[role="login"] {
+.login {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -186,7 +186,7 @@ ol {
     width: 100%;
 }
 
-[role="chat"] li{
+.chat li{
     border-radius: 0.7em;
     padding-bottom: 0.3em;
     padding-left: 0.8em;
@@ -196,7 +196,7 @@ ol {
     margin-top: 3%;
 }
 
-[role="chat"] li:nth-child(odd) {
+.chat li:nth-child(odd) {
     align-items: flex-start;
     background-color: cornflowerblue;
 /*
@@ -207,23 +207,23 @@ ol {
     width: 40%;
 }
 
-[role="chat"] li:nth-child(even) {
+.chat li:nth-child(even) {
     align-items: flex-end;
     background-color: lightgreen;
 }
 
-[role="chat"] {
+.chat {
     display: flex;
     flex-direction: column;
 }
 
 
-[role="chat"] p {
+.chat p {
     margin-bottom: 0.3em;
     padding-top: 0.3em;
 }
 
-[role="chat"] footer p {
+.chat footer p {
     color: lightslategray;
     font-size: 0.7em;
     margin: 0;
@@ -257,39 +257,33 @@ figure{
 margin: auto;}*/
 
 /* sectie Rating */
-[role="rating"] {
+.rating {
    width: 100%;
 }
 
-[role="rating"] svg {
+.rating svg {
     align-content: center;
     display: flex;
     flex-direction: row;
     height: 2.8em;
 }
 
-[role="rating"] input {
+.rating input {
     margin-right: 0;
 }
 
-fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
 
-[role="rating"] div {
+.rating div {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-[role="stepIndicator"]{
+.stepIndicator {
     background-color: #A4BFEB;
 }
 
-[role="stepIndicator"] ol {
+.stepIndicator  ol {
     background: none;
     display: flex;
     flex-direction: row;
@@ -299,10 +293,43 @@ fieldset {
     width: 100%;
 }
 
-[role="stepIndicator"] li {
+.stepIndicator li {
     display: inline-block;
     padding-right: 1.8em;
 }
+
+
+
+svg {
+    height: 2.8em;
+    display: block;
+    margin: 0 auto;
+}
+
+label {
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+}
+
+input[name="emotion"] {
+    display: none;
+}
+
+input[name="emotion"] + label svg {
+    transform: scale(1);
+    transition: 500ms ease;
+}
+
+input[name="emotion"]:checked + label svg {
+    transform: scale(2);
+}
+
+.emoji{
+    cursor: pointer;
+}
+
+/* Progressbar */
 
 progress {
     width: 100%;
@@ -315,14 +342,14 @@ progress {
         max-width: 50%;
         }
 
-    [role="stepIndicator"], [role="rating"] {
+    .stepIndicator , .rating {
         flex-basis: 100%;
         max-width: 100%;
         }
 }
 
 @media (min-width: 40em) {
-    [role="stepIndicator"], [role="rating"] {
+    .stepIndicator , .rating{
         flex-basis: 30%;
         max-width: 50%;
         }
