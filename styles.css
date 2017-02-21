@@ -1,14 +1,28 @@
 /* Algemeen */
-*{
+* {
     box-sizing: border-box;
 }
 
 body {
-    font-family: Open Sans, sans-serif;
-    font-size: 1em;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1.1em;
     line-height: 1.4;
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: Ampersand;
+    src:local('Ovo'),
+        local('GoudyOldStyleT-Italic'),
+        local('Garamond-Italic'),
+        local('Palatino-Italic');
+    unicode-range: U+26;
+}
+
+nav h1 {
+    font-family: Ampersand, Alegreya Sans, sans-serif;
+    font-size: 1.8em;
 }
 
 h1, legend {
@@ -17,8 +31,17 @@ h1, legend {
     padding: 0;
 }
 
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* De flex-container */
-main{
+main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -40,23 +63,23 @@ section, .stepIndicator {
     padding: 1.5em;
 }
 
-.widthBorder{
+.widthBorder {
     align-items: center;
     flex-basis: 100%;
     justify-content: center;
 
 }
 
-section:nth-child(odd){
+section:nth-child(odd) {
     background-color: #F4C8A4;
 }
 
-section:nth-child(even){
+section:nth-child(even) {
     background-color: #A4BFEB ;
 }
 
 /* Navigatie */
-[role="mainNav"] h1{
+[role="navigation"] h1{
     align-items: center;
     color: white;
     display: flex;
@@ -65,7 +88,7 @@ section:nth-child(even){
     order: -1;
 }
 
-[role="mainNav"]{
+[role="navigation"] {
     background: #807182;
     display: flex;
     flex-direction: row;
@@ -73,28 +96,36 @@ section:nth-child(even){
     text-align: center;
     width: 100vw;
 }
+/*     navigation      */
 
-[role="mainNav"] ul{
+[role="navigation"] ul {
     align-content: center;
     display: flex;
     flex-direction: row;
+    margin: 0;
     padding: 0;
 }
 
-[role="mainNav"] ul li{
+[role="navigation"] ul li {
     color: white;
     display: inline;
     flex-direction: row;
     list-style-type: none;
+    transition: background-color .5s ease;
     width: 100%;
 }
 
-[role="mainNav"] a{
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
+[role="navigation"] ul li:hover {
+    background-color: #998d9b;
 }
 
+[role="navigation"] a {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 1em;
+}
 
 /* http://koen.kivits.com/articles/pure-css-menu/ gemaakt door Koen Kivits  Gekeken hoe hij het had gedaan en vervolgens toegepast op mijn code */
 /*MENUUUUU*/
@@ -116,18 +147,21 @@ section:nth-child(even){
 }
 .onclick-menu-content {
     flex-wrap: wrap;
-    opacity: 0; /* use opacity to fake immediate toggle */
+    font-size: 0.9em;
+    opacity: 0;
+    padding-top: 0.5%;
     position: absolute;
     transition: visibility 0.5s;
     visibility: hidden;
+    width: 25%;
     z-index: 1;
 }
 
-#menuTabProduct{
+#menuTabProduct {
     padding-right: 0.2em;
 }
 
-[role="mainNav"] button {
+ .onclick-menu-content li{
     background-color: #807182;
     border: none;
     border-radius: 0;
@@ -138,6 +172,19 @@ section:nth-child(even){
     padding-top: 0.5em;
 }
 
+/*
+[role="navigation"] button {
+    background-color: #807182;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding-bottom: 0.5em;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0.5em;
+}
+*/
+
 
 /* Sectie inlog */
 .login {
@@ -147,13 +194,22 @@ section:nth-child(even){
     width: 50%;
 }
 
-input{
+input {
     font-size: 1em;
     margin-bottom: 1em;
     margin-top: 0.3em;
     padding-bottom: 0.3em;
     padding-top: 0.3em;
     width: 100%;
+}
+
+.passwordInput {
+    margin-bottom: 0;
+}
+
+.login a {
+    color: lightslategray;
+    font-size: 0.9em;
 }
 
 input#field-stay-logged-in {
@@ -172,6 +228,7 @@ button {
 }
 
 form {
+    max-width: 25em;
     width: 100%;
 }
 
@@ -179,6 +236,8 @@ form {
 ol {
     background: white;
     border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     padding-bottom: 0.9em;
     padding-left: 0.7em;
@@ -186,41 +245,50 @@ ol {
     width: 100%;
 }
 
-.chat li{
-    border-radius: 0.7em;
-    padding-bottom: 0.3em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
-    display: flex;
-    flex-direction: column;
-    margin-top: 3%;
-}
-
-.chat li:nth-child(odd) {
-    align-items: flex-start;
-    background-color: cornflowerblue;
-/*
-    display: flex;
-    flex-direction: column;
-    margin-top: 3%;
-*/
-    width: 40%;
-}
-
-.chat li:nth-child(even) {
-    align-items: flex-end;
-    background-color: lightgreen;
-}
-
 .chat {
     display: flex;
     flex-direction: column;
+    max-width: 25em;
 }
 
+.chat li {
+    display: flex;
+    flex-direction: column;
+}
+
+.mymessage {
+    align-self: flex-end;
+}
+
+.respons {
+    align-self: flex-start;
+}
+
+.mymessage > p {
+    background-color: lightgreen;
+    border-radius: 0.7em 0.7em 0.1em 0.7em;
+}
+
+.respons > p {
+    background-color: cornflowerblue;
+    border-radius: 0.7em 0.7em 0.7em 0.1em;
+}
 
 .chat p {
     margin-bottom: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
     padding-top: 0.3em;
+}
+
+.chat footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.mymessage footer {
+    align-items: flex-end;
 }
 
 .chat footer p {
@@ -228,33 +296,40 @@ ol {
     font-size: 0.7em;
     margin: 0;
     padding-bottom: 0.1em;
+    padding-top: 0;
 }
 
-textarea#field-message {
+.sendMessage {
+    display: flex;
+}
+
+.sendMessage textarea {
     border-color: white;
-    border-radius: 0.3em;
+    border-radius: 0.3em 0 0 0.3em;
     font-size: inherit;
     height: 2em;
     max-width: 100%;
-    width: 100%;
+    width: 80%;
 }
+
+.sendMessage button {
+    border-radius: 0 0.3em 0.3em 0;
+    margin-top: 0;
+    width: 20%;
+}
+
 /* sectie media item en picture with subtitle*/
 
 img {
     width: 100%;
 }
 
-figure{
+figure {
     align-items: center;
     display: flex;
     justify-content: center;
     margin: 0;
 }
-/*  Ik heb geprobeerd deze code te gebruiken, maar het werkte niet. Ik had daarvoor al een werkende oplossing gevonden dus vandaar dat deze uitgecomment staat. Css secrets- Lea Verou
-
-figure{
-    width: min-content;
-margin: auto;}*/
 
 /* sectie Rating */
 .rating {
@@ -301,15 +376,15 @@ margin: auto;}*/
 
 
 svg {
-    height: 2.8em;
     display: block;
+    height: 2.8em;
     margin: 0 auto;
 }
 
-label {
-    display: inline-block;
-    width: 8em;
+.rating label {
+/*    display: inline-block;*/
     text-align: center;
+    width: 8em;
 }
 
 input[name="emotion"] {
@@ -325,7 +400,7 @@ input[name="emotion"]:checked + label svg {
     transform: scale(2);
 }
 
-.emoji{
+.emoji {
     cursor: pointer;
 }
 
@@ -349,7 +424,7 @@ progress {
 }
 
 @media (min-width: 40em) {
-    .stepIndicator , .rating{
+    .stepIndicator , .rating {
         flex-basis: 30%;
         max-width: 50%;
         }
