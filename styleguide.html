@@ -14,55 +14,96 @@
 <body>
 
 
+<header>
+    <!-- place components or patterns here -->
+    <h1 class="navH1">Living Styleguide &</h1>
+    <!--  Navigatie  -->
+    <nav role="navigation" tabindex="0" class="onclick-menu">
+            <ul>
+                <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
+                <li>
+                    <a href="#" id="menuTabProduct" class="menuTabProduct"></a><span>Products v</span>
 
-<!-- place components or patterns here -->
+                    <!--                http://koen.kivits.com/articles/pure-css-menu/ gemaakt door Koen Kivits  Gekeken hoe hij het had gedaan en vervolgens toegepast op mijn code -->
 
-<!--  Navigatie  -->
-<nav role="navigation" tabindex="0" class="onclick-menu">
-<!--    <div tabindex="0" class="onclick-menu">-->
-       <h1 >Living Styleguide &</h1>
-        <ul>
-            <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
-            <li>
-                <a href="/products" id="menuTabProduct">Products    </a> v
+                    <ul class="onclick-menu-content">
+                        <li><a href="/products/rock">Rock</a></li>
+                        <li><a href="/products/paper">Paper</a></li>
+                        <li><button onclick="alert('Neem gerust een kijkje')"><a href="/products/scissors">Scissors</a></button></li>
+                    </ul>
 
-                <!--                http://koen.kivits.com/articles/pure-css-menu/ gemaakt door Koen Kivits  Gekeken hoe hij het had gedaan en vervolgens toegepast op mijn code -->
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+    <!--    </div>-->
+    </nav>
+</header>
 
-                <ul class="onclick-menu-content">
-                    <li><a href="/products/rock">Rock</a></li>
-                    <li><a href="/products/paper">Paper</a></li>
-                    <li><button onclick="alert('Neem gerust een kijkje')"><a href="/products/scissors">Scissors</a></button></li>
-                </ul>
+<!--  voor de blur -->
+   <div class="newsletter popup" id="news" name="newsletter" >
+                   <form action="/" method="post">
 
-            </li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-<!--    </div>-->
-</nav>
+                    <a href="#" class="close"> X </a>
+
+                   <h1>Nieuwsbrief</h1>
+                    <label for="field-email">Email</label>
+                    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                    <button type="submit">Schrijf me in</button>
+
+                    </form>
+                </div>
 
     <main>
         <!-- login -->
         <section>
-           <div class="login" >
-            <form action="/" method="post">
+           <div>
+                <div>
+                    <a href="#loginPopup" class="buttonsPopup">Login</a>
+                </div>
 
-            <label for="field-email">Email</label>
-            <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-            <label for="field-password">Password</label>
-            <input type="password" id="field-password" name="field-password" required class="passwordInput">
-
-            <a href="/">Forgot password</a>
-
-            <button type="submit">Login</button>
-
-            <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-            <label for="field-stay-logged-in">Stay logged in</label>
-
-
-        </form>
+                <div id="newsDiv">
+                    <a href="#news" class="buttonsPopup" >Nieuwsbrief</a>
+                </div>
             </div>
+
+            <div class="login popup" id="loginPopup" >
+               <form action="/" method="post">
+
+                <a href="#" class="close"> X </a>
+
+               <h1>Inloggen</h1>
+                <label for="field-email">Email</label>
+                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                <label for="field-password">Password</label>
+                <input type="password" id="field-password" name="field-password" required class="passwordInput">
+
+                <a href="/">Forgot password</a>
+
+                <button type="submit">Login</button>
+
+                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in" class="checkboxes">
+                <label for="field-stay-logged-in">Stay logged in</label>
+                </form>
+            </div>
+
+<!-- Oorspronkelijke en mooiere positie nieuwsbrief popup
+                <div class="newsletter popup" id="news" name="newsletter" >
+                   <form action="/" method="post">
+
+                    <a href="#" class="close"> X </a>
+
+                    <label for="field-email">Email</label>
+                    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                    <button type="submit">Schrijf me in</button>
+
+                    </form>
+                </div>
+-->
+
         </section>
 
         <!--  Chat  -->
@@ -101,7 +142,6 @@
                     <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
                     <p data-status="DELIVERED">Has been delivered</p>
                 </footer>
-
             </li>
         </ol>
 
@@ -116,7 +156,7 @@
 
         <!--  Media item  -->
         <section>
-            <article>
+            <article class="vertical">
                <div class="widthBorder">
                 <h1><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h1>
 
@@ -190,31 +230,36 @@
         </section>
 
         <!-- step-indicator -->
-        </section>
+            <nav class="stepIndicator" class="widthBlock">
 
-                <nav class="stepIndicator" class="widthBlock">
+                <h1>Finish your order</h1>
 
-                    <h1>Finish your order</h1>
+                <progress value="25" max="100">25%</progress>
 
-                    <progress value="0.25" max="1">25%</progress>
+                <ol>
+                    <li>
+                        <a href="/cart">Cart</a>
+                    </li>
+                    <li>
+                        <a href="#main-content" aria-label="Address, current step">Address</a>
+                    </li>
+                    <li>
+                        Payment
+                    </li>
+                    <li>
+                        Confirm
+                    </li>
+                </ol>
+            </nav>
 
-                    <ol>
-                        <li>
-                            <a href="/cart">Cart</a>
-                        </li>
-                        <li>
-                            <a href="#main-content" aria-label="Address, current step">Address</a>
-                        </li>
-                        <li>
-                            Payment
-                        </li>
-                        <li>
-                            Confirm
-                        </li>
-                    </ol>
-                </nav>
+        <!-- random background -->
+        <section class="randomBg">
+                <div class="whiteBg">
 
-        </section>
+                </div>
+            </section>
+
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

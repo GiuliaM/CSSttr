@@ -3,7 +3,35 @@
     box-sizing: border-box;
 }
 
+
+
+/* Aritkel probeersel! */
+article, form {
+   overflow: auto;
+    background: white;
+    padding: 1em;
+    position: relative;
+}
+
+article .vertical {
+    max-width: 22em;
+}
+
+article h1 a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
 body {
+    background: white;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
@@ -20,9 +48,18 @@ body {
     unicode-range: U+26;
 }
 
-nav h1 {
+.navH1 {
+    display: flex;
     font-family: Ampersand, Alegreya Sans, sans-serif;
     font-size: 1.8em;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+header{
+    background: #807182;
 }
 
 h1, legend {
@@ -31,12 +68,12 @@ h1, legend {
     padding: 0;
 }
 
-a{
+a, span{
     color: inherit;
     text-decoration: none;
 }
 
-a:hover {
+a:hover, span:hover {
     text-decoration: underline;
 }
 
@@ -49,6 +86,10 @@ main {
 }
 
 div {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -89,7 +130,6 @@ section:nth-child(even) {
 }
 
 [role="navigation"] {
-    background: #807182;
     display: flex;
     flex-direction: row;
     order: 0;
@@ -119,7 +159,7 @@ section:nth-child(even) {
     background-color: #998d9b;
 }
 
-[role="navigation"] a {
+[role="navigation"] a, [role="navigation"] span {
     color: white;
     font-size: 1.2em;
     font-weight: 600;
@@ -157,7 +197,7 @@ section:nth-child(even) {
     z-index: 1;
 }
 
-#menuTabProduct {
+.menuTabProduct {
     padding-right: 0.2em;
 }
 
@@ -165,25 +205,13 @@ section:nth-child(even) {
     background-color: #807182;
     border: none;
     border-radius: 0;
+    height: 4em;
     margin: 0;
     padding-bottom: 0.5em;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0.5em;
 }
-
-/*
-[role="navigation"] button {
-    background-color: #807182;
-    border: none;
-    border-radius: 0;
-    margin: 0;
-    padding-bottom: 0.5em;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0.5em;
-}
-*/
 
 
 /* Sectie inlog */
@@ -195,12 +223,27 @@ section:nth-child(even) {
 }
 
 input {
+    border-radius: 0.3em;
+    border-style: none;
+    font-family: inherit;
     font-size: 1em;
     margin-bottom: 1em;
     margin-top: 0.3em;
-    padding-bottom: 0.3em;
-    padding-top: 0.3em;
+    padding: 0.5em;
     width: 100%;
+}
+
+.popup input:focus {
+    transform: scale(1.02);
+    transition: 400ms ease;
+}
+
+.popup input:valid {
+    background: lightgreen;
+
+}
+.popup input:invalid {
+    background: #f7c0c8;
 }
 
 .passwordInput {
@@ -212,8 +255,34 @@ input {
     font-size: 0.9em;
 }
 
-input#field-stay-logged-in {
+.checkboxes {
     width: 5%;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label::before {
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: .2em;
+    content: '\a0';
+    display: inline-block;
+    height: .8em;
+    line-height: .65;
+    margin-right: .2em;
+    margin-top: 0.5em;
+    text-indent: .15em;
+    vertical-align: .2em;
+    width: .8em;
+
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: '\2713';
+    background: lightgreen;
 }
 
 button {
@@ -230,6 +299,71 @@ button {
 form {
     max-width: 25em;
     width: 100%;
+}
+
+/* pop-ups */
+
+#loginPopup, #news {
+    display: none;
+}
+
+#loginPopup:target, #news:target {
+    display: flex;
+    z-index: 1;
+}
+
+.popup {
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 250;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.8);
+}
+
+/*
+.newsletter{
+    background: blur(2px);
+    box-shadow: 0 .2em .5em rgba(0,0,0,.5),
+                0 0 0 100vmax rgba(0,0,0,.2);
+}
+*/
+
+main.de-emphasized, header.de-emphasized {
+    filter: blur(10px);
+}
+
+.close{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.buttonsPopup {
+    align-items: center;
+    background-color: #93879B;
+    border-radius: 0.3em;
+    border-style: none;
+    color: white;
+    display: flex;
+    font-family: inherit;
+    font-size: inherit;
+    height: 2.5em;
+    justify-content: center;
+    margin: 0.5em;
+    width: 7em;
+}
+
+.popup h1 {
+    margin-top: 0;
 }
 
 /* sectie chat */
@@ -301,14 +435,19 @@ ol {
 
 .sendMessage {
     display: flex;
+    background: none;
+    padding: 0;
 }
 
 .sendMessage textarea {
     border-color: white;
     border-radius: 0.3em 0 0 0.3em;
+    font-family: inherit;
     font-size: inherit;
     height: 2em;
     max-width: 100%;
+    padding-left: 1%;
+    padding-top: 1.5%;
     width: 80%;
 }
 
@@ -404,12 +543,47 @@ input[name="emotion"]:checked + label svg {
     cursor: pointer;
 }
 
+label.emoji > svg:hover {
+    transform: rotate(45deg);
+}
+
 /* Progressbar */
 
 progress {
     width: 100%;
 }
 
+progress[value] {
+    background-color: white;
+    border-radius: 0.3em;
+    color: white;
+    height: 1.5em;
+    position: relative;
+    width: 100%;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: white;
+    border-radius: 0.3em;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #807182;
+    border-bottom-left-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+    position: relative;
+}
+
+/* Random background */
+.randomBg{
+    background: hsl(20, 40%, 90%);
+    background-image:
+        linear-gradient(6deg, #FFF49B  11px, transparent 0),
+        linear-gradient(100deg, #A4BFEB 23px, transparent 0),
+        linear-gradient(90deg, #F4C8A4 23px, transparent 0);
+    background-size: 83px 30%, 61px 30%, 41px 100%;
+    height: auto;
+}
 
 @media (min-width: 45em) {
     section {
