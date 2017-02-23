@@ -313,7 +313,7 @@ form {
 }
 
 .popup {
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.5);
     position: fixed;
     left: 0;
     top: 0;
@@ -327,14 +327,6 @@ form {
     z-index: 250;
     box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.8);
 }
-
-/*
-.newsletter{
-    background: blur(2px);
-    box-shadow: 0 .2em .5em rgba(0,0,0,.5),
-                0 0 0 100vmax rgba(0,0,0,.2);
-}
-*/
 
 main.de-emphasized, header.de-emphasized {
     filter: blur(10px);
