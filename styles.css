@@ -489,15 +489,13 @@ article h1 a:after {
     justify-content: space-between;
     padding: 0;
     padding-left: 0;
-    width: 100%;
+    width: 90%;
 }
 
 .stepIndicator li {
     display: inline-block;
     padding-right: 1.8em;
 }
-
-
 
 svg {
     display: block;
@@ -536,7 +534,7 @@ label.emoji > svg:hover {
 /* Progressbar */
 
 progress {
-    width: 100%;
+    width: 90%;
 }
 
 progress[value] {
