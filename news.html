@@ -56,109 +56,49 @@
                 </div>
 
     <main>
-        <!-- login -->
-        <section>
-           <div>
-                <div>
-                    <a href="#loginPopup" class="buttonsPopup">Login</a>
-                </div>
-
-                <div id="newsDiv">
-                    <a href="#news" class="buttonsPopup" >Newsletter</a>
-                </div>
-            </div>
-
-            <div class="login popup" id="loginPopup" >
-               <form action="/" method="post">
-
-                <a href="#" class="close"> X </a>
-
-               <h1>Inloggen</h1>
-                <label for="field-email">Email</label>
-                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-                <label for="field-password">Password</label>
-                <input type="password" id="field-password" name="field-password" required class="passwordInput">
-
-                <a href="/">Forgot password</a>
-
-                <button type="submit">Login</button>
-
-                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in" class="checkboxes">
-                <label for="field-stay-logged-in">Stay logged in</label>
-                </form>
-            </div>
-
-<!-- Oorspronkelijke en mooiere positie nieuwsbrief popup
-                <div class="newsletter popup" id="news" name="newsletter" >
-                   <form action="/" method="post">
-
-                    <a href="#" class="close"> X </a>
-
-                    <label for="field-email">Email</label>
-                    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-                    <button type="submit">Schrijf me in</button>
-
-                    </form>
-                </div>
--->
-
-        </section>
-
-        <!--  Chat  -->
-        <section>
-           <ol class="chat" tabindex="0">
-            <li class="mymessage">
-
-                <p>
-                    Hey!
-                </p>
-
-                <footer>
-                    <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
-                    <p data-status="READ">Has been read</p>
-                </footer>
-
-            </li>
-            <li class="respons">
-
-                <p>
-                    Hey! Sorry I was busy
-                </p>
-
-                <footer>
-                    <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
-                </footer>
-
-            </li>
-            <li class="mymessage">
-
-                <p>
-                    I sent that 2 years ago
-                </p>
-
-                <footer>
-                    <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
-                    <p data-status="DELIVERED">Has been delivered</p>
-                </footer>
-            </li>
-        </ol>
-
-            <form action="/" method="post" class="sendMessage">
-            <label for="field-message"></label>
-            <textarea name="field-message" id="field-message"></textarea>
-
-            <button type="submit">Send</button>
-
-        </form>
-        </section>
-
         <!--  Media item  -->
         <section>
             <article class="portrait">
                <div class="widthBorder">
                 <h1><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h1>
+
+                <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car." class="teaser"/>
+
+                <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </div>
+            </article>
+        </section>
+        <section class="newsArticles">
+            <article>
+               <div class="widthBorder">
+                <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+
+                <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."/>
+
+                <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </div>
+            </article>
+            <article>
+               <div class="widthBorder">
+                <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+
+                <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."/>
+
+                <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </div>
+            </article>
+            <article>
+               <div class="widthBorder">
+                <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+
+                <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."/>
+
+                <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </div>
+            </article>
+            <article>
+               <div class="widthBorder">
+                <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
 
                 <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."/>
 
@@ -228,50 +168,8 @@
                     </div>
                 </div>
         </section>
-
-        <!-- step-indicator -->
-            <nav class="stepIndicator" class="widthBlock">
-
-                <h1>Finish your order</h1>
-
-                <progress value="25" max="100">25%</progress>
-
-                <ol>
-                    <li>
-                        <a href="/cart">Cart</a>
-                    </li>
-                    <li>
-                        <a href="#main-content" aria-label="Address, current step">Address</a>
-                    </li>
-                    <li>
-                        Payment
-                    </li>
-                    <li>
-                        Confirm
-                    </li>
-                </ol>
-            </nav>
-
-        <!-- random background -->
-        <section class="randomBg">
-                <div class="whiteBg">
-                    <h1>Hello</h1>
-                    <p>This is an example.</p>
-                </div>
-            </section>
-
-        <section>
-            <div>
-                <h1>Loading spinner</h1>
-            </div>
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div></div>
-            </div>
-        </section>
-
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
