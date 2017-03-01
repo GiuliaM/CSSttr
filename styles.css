@@ -470,7 +470,7 @@ article h1 a:after {
     align-content: center;
     display: flex;
     flex-direction: row;
-    height: 2.8em;
+    width: 56%;
 }
 
 .rating input {
