@@ -75,6 +75,7 @@ section, .stepIndicator {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 1.5em;
+    width: 100%;
 }
 
 .widthBorder {
