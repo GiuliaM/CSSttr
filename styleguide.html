@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,7 +8,6 @@
 
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Ovo|Alegreya+Sans:300,400,700" rel="stylesheet">
-
 </head>
 <body>
 
@@ -29,7 +27,7 @@
                     <ul class="onclick-menu-content">
                         <li><a href="/products/rock">Rock</a></li>
                         <li><a href="/products/paper">Paper</a></li>
-                        <li><button onclick="alert('Neem gerust een kijkje')"><a href="/products/scissors">Scissors</a></button></li>
+                        <li><a href="/products/scissors">Scissors</a></li>
                     </ul>
 
                 </li>
@@ -56,54 +54,12 @@
                 </div>
 
     <main>
-        <!-- login -->
-        <section>
-           <div class="widthBorder">
-                <div>
-                    <a href="#loginPopup" class="buttonsPopup">Login</a>
+        <!-- random background -->
+        <section class="randomBg">
+                <div class="whiteBg">
+                    <h1>Hello</h1>
+                    <p>This is an example.</p>
                 </div>
-
-                <div id="newsDiv">
-                    <a href="#news" class="buttonsPopup" >Newsletter</a>
-                </div>
-            </div>
-
-            <div class="login popup" id="loginPopup" >
-               <form action="/" method="post">
-
-                <a href="#" class="close"> X </a>
-
-               <h1>Inloggen</h1>
-                <label for="field-email">Email</label>
-                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-                <label for="field-password">Password</label>
-                <input type="password" id="field-password" name="field-password" required class="passwordInput">
-
-                <a href="/">Forgot password</a>
-
-                <button type="submit">Login</button>
-
-                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in" class="checkboxes">
-                <label for="field-stay-logged-in">Stay logged in</label>
-                </form>
-            </div>
-
-<!-- Oorspronkelijke en mooiere positie nieuwsbrief popup
-                <div class="newsletter popup" id="news" name="newsletter" >
-                   <form action="/" method="post">
-
-                    <a href="#" class="close"> X </a>
-
-                    <label for="field-email">Email</label>
-                    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-                    <button type="submit">Schrijf me in</button>
-
-                    </form>
-                </div>
--->
-
         </section>
 
         <!--  Chat  -->
@@ -154,6 +110,68 @@
         </form>
         </section>
 
+        <!-- login -->
+        <section>
+           <div class="widthBorder">
+                <div>
+                    <a href="#loginPopup" class="buttonsPopup">Login</a>
+                </div>
+
+                <div id="newsDiv">
+                    <a href="#news" class="buttonsPopup" >Newsletter</a>
+                </div>
+            </div>
+
+            <div class="login popup" id="loginPopup" >
+               <form action="/" method="post">
+
+                <a href="#" class="close"> X </a>
+
+               <h1>Inloggen</h1>
+                <label for="field-email">Email</label>
+                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                <label for="field-password">Password</label>
+                <input type="password" id="field-password" name="field-password" required class="passwordInput">
+
+                <a href="/">Forgot password</a>
+
+                <button type="submit">Login</button>
+
+                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in" class="checkboxes">
+                <label for="field-stay-logged-in">Stay logged in</label>
+                </form>
+            </div>
+
+<!-- Oorspronkelijke en mooiere positie nieuwsbrief popup
+                <div class="newsletter popup" id="news" name="newsletter" >
+                   <form action="/" method="post">
+
+                    <a href="#" class="close"> X </a>
+
+                    <label for="field-email">Email</label>
+                    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                    <button type="submit">Schrijf me in</button>
+
+                    </form>
+                </div>
+-->
+
+        </section>
+
+        <!-- Loading spinner-->
+        <section>
+            <div>
+                <h1>Loading spinner</h1>
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div></div>
+            </div>
+        </section>
+
         <!--  rating   -->
         <section class="rating">
             <h1>Rating</h1>
@@ -191,7 +209,6 @@
         </section>
 
         <!-- step-indicator -->
-<!--        <section>-->
         <nav class="stepIndicator widthBlock">
 
                 <h1>Finish your order</h1>
@@ -213,28 +230,8 @@
                     </li>
                 </ol>
             </nav>
-<!--        </section>-->
-        <!-- random background -->
-        <section class="randomBg">
-                <div class="whiteBg">
-                    <h1>Hello</h1>
-                    <p>This is an example.</p>
-                </div>
-            </section>
 
-        <!-- Loading spinner-->
-        <section>
-            <div>
-                <h1>Loading spinner</h1>
-            </div>
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div></div>
-            </div>
-        </section>
-
-                <!--  Media item  -->
+        <!--  Media item  -->
         <section>
             <article class="portrait">
                <div class="widthBorder">

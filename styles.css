@@ -32,12 +32,17 @@ body {
     font-size: 1.8em;
     justify-content: center;
     margin: 0;
+    max-width: 100%;
     padding-bottom: 2%;
     padding-top: 2%;
 }
 
 header{
     background: #807182;
+}
+
+h1 {
+    max-width: 14em;
 }
 
 h1, legend {
@@ -52,6 +57,7 @@ a, span{
 }
 
 span {
+    align-items: center;
     display: flex;
     flex-direction: column;
 }
@@ -107,9 +113,11 @@ section:nth-child(even) {
     background-color: #A4BFEB ;
 }
 
+/*
 section:nth-child(-n+5){
     max-height: 30em;
 }
+*/
 
 /* Navigatie */
 [role="navigation"] h1{
@@ -444,7 +452,7 @@ ol {
 /* sectie media item en picture with subtitle*/
 
 img {
-    max-width: 25em;
+    max-width: 24em;
     width: 100%;
 }
 
@@ -456,15 +464,18 @@ figure {
 }
 
 article, form {
-/*   overflow: auto;*/
+   overflow: auto;
     background: white;
     padding: 1em;
     position: relative;
+    max-height: max-content;
 }
 
+/*
 article .portrait {
     max-width: 22em;
 }
+*/
 
 article h1 a:after {
     content: '';
@@ -476,23 +487,22 @@ article h1 a:after {
 }
 
 /* sectie Rating */
-.rating {
+.rating, .ratingNews{
    width: 100%;
 }
 
-.rating svg {
+.rating svg, .ratingNews svg{
     align-content: center;
     display: flex;
     flex-direction: row;
     width: 66%;
 }
 
-.rating input {
+.rating input, .ratingNews input {
     margin-right: 0;
 }
 
-
-.rating div {
+.rating div, .ratingNews div {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -646,19 +656,29 @@ progress[value]::-webkit-progress-value {
         max-width: 50%;
         }
 
-    .stepIndicator , .rating {
-        flex-basis: 100%;
-        max-width: 100%;
-        }
-}
-
-@media (min-width: 40em) {
-    .stepIndicator , .rating {
-        flex-basis: 30%;
+    .stepIndicator, .rating {
+        flex-basis: 50%;
         max-width: 50%;
         }
 }
 
+@media (min-width: 65em) {
+    section {
+        flex-basis: 33%;
+        max-width: 34%;
+        }
+
+    .stepIndicator , .rating {
+        flex-basis: 33%;
+        max-width: 34%;
+        }
+
+/*
+    section:nth-last-child(3) {
+        max-width: 50%;
+    }
+*/
+}
 
 /*------------------------------------------------*/
 /*news.html*/
@@ -676,6 +696,8 @@ progress[value]::-webkit-progress-value {
     width:50%;
 }
 */
+
+
 
 .newsArticles .widthBorder{
     flex-direction: row;
@@ -701,4 +723,6 @@ progress[value]::-webkit-progress-value {
     max-width: 21em;
     margin: 0.7em;
 }
+
+
 
