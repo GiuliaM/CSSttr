@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html{
+    width: 100%;
+}
+
 body {
     background: white;
     font-family: 'Alegreya Sans', sans-serif;
@@ -10,6 +14,7 @@ body {
     line-height: 1.4;
     margin: 0;
     padding: 0;
+    width: 100%
 }
 
 @font-face {
