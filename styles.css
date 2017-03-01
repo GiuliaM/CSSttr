@@ -203,7 +203,7 @@ input {
     margin-bottom: 1em;
     margin-top: 0.3em;
     padding: 0.5em;
-    width: 10%;
+    width: 100%;
 }
 
 .popup input:focus {
@@ -480,6 +480,8 @@ article h1 a:after {
 
 .stepIndicator {
     background-color: #A4BFEB;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .stepIndicator  ol {
@@ -489,12 +491,12 @@ article h1 a:after {
     justify-content: space-between;
     padding: 0;
     padding-left: 0;
-    width: 90%;
+/*    width: 90%;*/
 }
 
 .stepIndicator li {
     display: inline-block;
-    padding-right: 1.8em;
+    padding-right: 1.3em;
 }
 
 svg {
