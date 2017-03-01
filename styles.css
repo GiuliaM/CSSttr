@@ -625,6 +625,7 @@ progress[value]::-webkit-progress-value {
   }
 }
 
+/*
 @media (min-width: 45em) {
     section {
         flex-basis: 50%;
@@ -643,6 +644,7 @@ progress[value]::-webkit-progress-value {
         max-width: 50%;
         }
 }
+*/
 
 
 /*------------------------------------------------*/
