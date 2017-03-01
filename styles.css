@@ -51,8 +51,17 @@ a, span{
     text-decoration: none;
 }
 
+span {
+    display: flex;
+    flex-direction: column;
+}
+
 a:hover, span:hover {
     text-decoration: underline;
+}
+
+p {
+    max-width: 24em;
 }
 
 /* De flex-container */
@@ -96,6 +105,10 @@ section:nth-child(odd) {
 
 section:nth-child(even) {
     background-color: #A4BFEB ;
+}
+
+section:nth-child(-n+5){
+    max-height: 30em;
 }
 
 /* Navigatie */
@@ -209,7 +222,7 @@ input {
     margin-bottom: 1em;
     margin-top: 0.3em;
     padding: 0.5em;
-    width: 80%;
+    width: 100%;
 }
 
 .popup input:focus {
@@ -431,6 +444,7 @@ ol {
 /* sectie media item en picture with subtitle*/
 
 img {
+    max-width: 25em;
     width: 100%;
 }
 
@@ -470,7 +484,7 @@ article h1 a:after {
     align-content: center;
     display: flex;
     flex-direction: row;
-    width: 56%;
+    width: 66%;
 }
 
 .rating input {
@@ -512,7 +526,7 @@ svg {
 }
 
 .rating label {
-/*    display: inline-block;*/
+    display: inline-block;
     text-align: center;
     width: 8em;
 }
@@ -644,20 +658,6 @@ progress[value]::-webkit-progress-value {
         max-width: 50%;
         }
 }
-
-
-/*
-input {
-    border-radius: 0.3em;
-    border-style: none;
-    font-family: inherit;
-    font-size: 1em;
-    margin-bottom: 1em;
-    margin-top: 0.3em;
-    padding: 0.5em;
-    width: 100%;
-}
-*/
 
 
 /*------------------------------------------------*/
