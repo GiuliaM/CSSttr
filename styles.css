@@ -697,8 +697,6 @@ progress[value]::-webkit-progress-value {
 }
 */
 
-
-
 .newsArticles .widthBorder{
     flex-direction: row;
     flex-wrap: wrap;
@@ -713,9 +711,13 @@ progress[value]::-webkit-progress-value {
     min-width: 100%;
 }
 
-.newsArticles img{
-    width: 24%;
+.newsArticles h2 {
+    font-size: 1.3em;
+    margin: 0;
+}
 
+.newsArticles img{
+    width: 28%;
 }
 
 .newsArticles p {
@@ -724,5 +726,22 @@ progress[value]::-webkit-progress-value {
     margin: 0.7em;
 }
 
+/* Option One*/
+.optionOne a{
+    width: 70%;
+}
 
+/* Option Two*/
+.optionTwo h2, .optionThree h2 {
+    width: 65%;
+}
+
+/* Option Three */
+.optionThree .widthBorder {
+    flex-direction: row-reverse;
+}
+
+.optionThree img{
+    margin-right:0.8em
+}
 
