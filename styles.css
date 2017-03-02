@@ -60,6 +60,7 @@ span {
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-size: 0.9em;
 }
 
 a:hover, span:hover {
@@ -120,6 +121,15 @@ section:nth-child(-n+5){
 */
 
 /* Navigatie */
+/*http://koen.kivits.com/articles/pure-css-menu/ gemaakt door Koen Kivits  Gekeken hoe hij het had gedaan en vervolgens toegepast op mijn code */
+
+[role="navigation"] {
+    text-align: center;
+    width: 100vw;
+    display: inline-block;
+    position: relative;
+}
+
 [role="navigation"] h1{
     align-items: center;
     color: white;
@@ -129,16 +139,7 @@ section:nth-child(-n+5){
     order: -1;
 }
 
-[role="navigation"] {
-    display: flex;
-    flex-direction: row;
-    order: 0;
-    text-align: center;
-    width: 100vw;
-}
-/*     navigation      */
-
-[role="navigation"] ul {
+[role="navigation"] > ul {
     align-content: center;
     display: flex;
     flex-direction: row;
@@ -146,6 +147,19 @@ section:nth-child(-n+5){
     padding: 0;
 }
 
+/* dropdown ul*/
+[role="navigation"] ul ul {
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    position: absolute;
+    transition: visibility 0.5s;
+    width: 25%;
+    z-index: 1;
+    display: none;
+    -webkit-padding-start: 0px;
+}
+
+/* menu listitems*/
 [role="navigation"] ul li {
     color: white;
     display: inline;
@@ -159,49 +173,22 @@ section:nth-child(-n+5){
     background-color: #998d9b;
 }
 
-[role="navigation"] a, [role="navigation"] span {
+[role="navigation"] a {
     color: white;
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
-    padding-bottom: 1em;
-}
-
-/* http://koen.kivits.com/articles/pure-css-menu/ gemaakt door Koen Kivits  Gekeken hoe hij het had gedaan en vervolgens toegepast op mijn code */
-/*MENUUUUU*/
-.onclick-menu {
     display: inline-block;
-    position: relative;
-}
-.onclick-menu:before {
-    display: inline-block;
-}
-.onclick-menu:focus {
-    /* clicking on label should toggle the menu */
-    pointer-events: none;
-}
-.onclick-menu:focus .onclick-menu-content {
-    opacity: 1; /*  opacity is 1 in opened state (see below) */
-    pointer-events: auto; /* don't let pointer-events affect descendant elements */
-    visibility: visible;
-}
-.onclick-menu-content {
-    flex-wrap: wrap;
-    font-size: 0.9em;
-    opacity: 0;
-    padding-top: 0.5%;
-    position: absolute;
-    transition: visibility 0.5s;
-    visibility: hidden;
-    width: 25%;
-    z-index: 1;
+    width: 100%;
+
 }
 
-.menuTabProduct {
-    padding-right: 0.2em;
+[role="navigation"] a:focus + ul{
+    display: block;
 }
 
- .onclick-menu-content li{
+/* li van de dropdown*/
+ [role="navigation"] ul ul li{
     background-color: #807182;
     border: none;
     border-radius: 0;
@@ -502,7 +489,7 @@ article h1 a:after {
     margin-right: 0;
 }
 
-.rating div, .ratingNews div {
+.rating div {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -682,21 +669,33 @@ progress[value]::-webkit-progress-value {
 
 /*------------------------------------------------*/
 /*news.html*/
-/*
-.newsArticles article:nth-child(1) {
-    width: 50%;
+/* Media-item big*/
+.mediaItem h1{
+        font-size: 1.3em;
+        margin: 0;
+        padding: 0;
 }
-*/
 
-/*
-.newsArticles article:nth-last-child(5) ~ article {
+.ratingNews h1 {
+    font-size: 1em;
+}
+
+.ratingNews svg{
+    width: 33%;
+}
+
+.ratingNews div{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width:50%;
+    flex-direction: row;
 }
-*/
 
+.mediaItem .widthBorder section{
+    background-color: white;
+    border: none;
+    justify-content: flex-start;
+}
+
+/* News articles */
 .newsArticles .widthBorder{
     flex-direction: row;
     flex-wrap: wrap;
@@ -717,7 +716,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .newsArticles img{
-    width: 28%;
+    width: 30%;
 }
 
 .newsArticles p {
@@ -733,7 +732,7 @@ progress[value]::-webkit-progress-value {
 
 /* Option Two*/
 .optionTwo h2, .optionThree h2 {
-    width: 65%;
+    width: 63%;
 }
 
 /* Option Three */
@@ -745,3 +744,38 @@ progress[value]::-webkit-progress-value {
     margin-right:0.8em
 }
 
+@media (min-width: 45em){
+    .mediaItem .widthBorder section{
+        max-width: 100%
+    }
+}
+
+@media (min-width: 65em) {
+    .newsArticle {
+        max-width: 30%;
+    }
+
+    .mediaItem{
+        max-width: 70%;
+    }
+
+    .mediaItem img{
+        order:0;
+        width: 50%;
+    }
+
+    .mediaItem .widthBorder {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .mediaItem .widthBorder section{
+        max-width: 50%;
+        padding: 0;
+        padding-left: 4%;
+    }
+
+    .ratingNews {
+        align-items: flex-start;
+    }
+}
